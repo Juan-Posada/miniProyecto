@@ -31,6 +31,48 @@ void main() {
       //EMPIEZA SWITCH 1
 
       case 1: //CASO PREDEFINIDO
+
+        List<String> listaEstudiantesCaso1 = [
+          "Andres Felipe Sánchez Hurtado",
+          "Angie Dahiana Rios Quintero",
+          "Cristian Alvarez Aranzazu",
+          "Daniel Estiven Arboleda Duque",
+          "David Andres Morales Guapacha",
+          "David Stiven Ocampo Londoño",
+          "Esteban Reyes Agudelo",
+          "Jacobo Galvis Jimenez",
+          "Jaime Andres Calle Salazar",
+          "Jeferson Mauricio Hernandez Ladino",
+          "Jhon Alexander Pineda Osorio",
+          "Jose Miguel Sierra Aristizabal",
+          "Jose Sebastián Ocampo López",
+          "Juan Andres Osorio Gomez",
+          "Juan Diego Calvo Osorio",
+          "Juan Esteban Lopez Calle",
+          "Juan Pablo Rios Aristizabal",
+          "Maria Paula Melo Solano",
+          "Miguel Angel Peña Jimenez",
+          "Samuel Castaño Cardona",
+          "Juan Jose Posada Perez",
+          "Alejandro Serna Londoño",
+          "Juan Manuel Zuluaga Rincon",
+          "Juan Daniel Gomez Laserna",
+          "Yerson Stiven Herrera Obando",
+          "Mateo Herrera Vargas",
+          "Alejandro Vallejo Escobar"
+        ];
+
+        List<String> listaTemasCaso1 = [
+          "Programación orientada a objetos",
+          "Diferencia entre programación orientada a objetos y programación estructurada",
+          "Objeto, clase y sus diferencias",
+          "Abstracción",
+          "Encapsulamiento",
+          "Herencia",
+          "Polimorfismo",
+          "Diagramas de UML"
+        ];
+
         do {
           //EMPIEZA DO WHILE 2
           print("");
@@ -71,6 +113,10 @@ void main() {
                     break;
 
                   case 2:
+                    print("");
+                    print("LISTA DE ESTUDIANTES");
+                    print("-" * 30);
+                    print(listaEstudiantesCaso1);
                     break;
 
                   default:
@@ -101,6 +147,10 @@ void main() {
                     break;
 
                   case 2:
+                  print("");
+                    print("LISTA DE ESTUDIANTES");
+                    print("-" * 30);
+                    print(listaTemasCaso1);
                     break;
 
                   default:
@@ -153,6 +203,11 @@ void main() {
         break;
 
       case 2: //CASO SIN PREDEFINIDOS
+
+        List<String> listaEstudiantesCaso2 = [], listaTemasCaso2 = [];
+        String? nombreCaso2, temaCaso2;
+        int cantEstudiantes = 26, cantTemas = 7;
+
         do {
           //EMPIEZA DO WHILE 2
           print("");
@@ -191,12 +246,21 @@ void main() {
 
                 switch (opcionMenuEstudiantes) {
                   case 1:
+                    for (int i = 0; i < cantEstudiantes; i++) {
+                      print("Digite el nombre del estudiante #${i + 1}");
+                      nombreCaso2 = stdin.readLineSync()!;
+                      listaEstudiantesCaso2.add(nombreCaso2);
+                    }
                     break;
 
                   case 2:
                     break;
 
                   case 3:
+                    print("");
+                    print("LISTA DE ESTUDIANTES");
+                    print("-" * 30);
+                    print(listaEstudiantesCaso2);
                     break;
 
                   default:
@@ -225,12 +289,21 @@ void main() {
 
                 switch (opcionMenuTemas) {
                   case 1:
+                    for (int i = 0; i < cantTemas; i++) {
+                      print("Digite el tema de exposición #${i + 1}");
+                      temaCaso2 = stdin.readLineSync()!;
+                      listaTemasCaso2.add(temaCaso2);
+                    }
                     break;
 
                   case 2:
                     break;
 
                   case 3:
+                    print("");
+                    print("LISTA DE TEMAS DE EXPOSICIÓN");
+                    print("-" * 30);
+                    print(listaTemasCaso2);
                     break;
 
                   default:
@@ -252,7 +325,7 @@ void main() {
                 print("2. Mostrar equipos de trabajo");
                 print("0. Salir");
 
-                print("-" *30);
+                print("-" * 30);
                 print("Digite la opción deseada");
                 opcionMezcla = int.parse(stdin.readLineSync()!);
 
@@ -261,9 +334,6 @@ void main() {
                     break;
 
                   case 2:
-                    break;
-
-                  case 3:
                     break;
 
                   default:
