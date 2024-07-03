@@ -73,6 +73,13 @@ void main() {
           "Diagramas de UML"
         ];
 
+        int menuModificarEstudiantesCaso1,
+            menuModificarTemasCaso1,
+            posicionABuscarEstudiantes,
+            posicionABuscarTemas;
+
+        String? nuevoNombre, nuevoTema, edicionNombre, edicionTema;
+
         do {
           //EMPIEZA DO WHILE 2
           print("");
@@ -110,13 +117,91 @@ void main() {
 
                 switch (opcionMenuEstudiantes) {
                   case 1:
+                    do {
+                      print("");
+                      print("🏁" * 30);
+                      print("MENÚ DE EDICIÓN (ESTUDIANTES)");
+                      print("🏁" * 30);
+                      print("1. Añadir estudiante");
+                      print("2. Modificar estudiante");
+                      print("3. Eliminar estudiante");
+                      print("0. Salir");
+
+                      print("-" * 30);
+                      print("Digite la opción deseada");
+                      menuModificarEstudiantesCaso1 =
+                          int.parse(stdin.readLineSync()!);
+
+                      switch (menuModificarEstudiantesCaso1) {
+                        case 1:
+                          print("");
+                          print(
+                              "Escriba el nombre del estudiante que desea añadir a la lista");
+                          nuevoNombre = stdin.readLineSync()!;
+                          listaEstudiantesCaso1.add(nuevoNombre);
+                          break;
+
+                        case 2:
+                          print("");
+                          print("Inserte la posición del estudiante a editar:");
+                          posicionABuscarEstudiantes =
+                              int.parse(stdin.readLineSync()!);
+
+                          print("");
+                          print("Escriba la edición del estudiante:");
+                          edicionNombre = stdin.readLineSync()!;
+
+                          listaEstudiantesCaso1.insert(
+                              posicionABuscarEstudiantes, edicionNombre);
+
+                          print("-" * 30);
+                          print("¡Estudiante editado con éxito!");
+                          print("Nueva lista:");
+                          for (int i = 0;
+                              i < listaEstudiantesCaso1.length;
+                              i++) {
+                            stdout.write("$i. ");
+                            print(listaEstudiantesCaso1[i]);
+                          }
+                          break;
+
+                        case 3:
+                          print("");
+                          print(
+                              "Inserte la posición del estudiante a eliminar:");
+                          posicionABuscarEstudiantes =
+                              int.parse(stdin.readLineSync()!);
+                          listaEstudiantesCaso1
+                              .removeAt(posicionABuscarEstudiantes);
+
+                          print("-" * 30);
+                          print("¡Estudiante eliminado con éxito!");
+                          print("Nueva lista:");
+                          for (int i = 0;
+                              i < listaEstudiantesCaso1.length;
+                              i++) {
+                            stdout.write("$i. ");
+                            print(listaEstudiantesCaso1[i]);
+                          }
+                          break;
+
+                        default:
+                          print("");
+                          print("Volviendo al menú de edición");
+                          print("-" * 30);
+                          break;
+                      }
+                    } while (menuModificarEstudiantesCaso1 != 0);
                     break;
 
                   case 2:
                     print("");
                     print("LISTA DE ESTUDIANTES");
                     print("-" * 30);
-                    print(listaEstudiantesCaso1);
+                    for (int i = 0; i < listaEstudiantesCaso1.length; i++) {
+                      stdout.write("$i. ");
+                      print(listaEstudiantesCaso1[i]);
+                    }
                     break;
 
                   default:
@@ -144,13 +229,85 @@ void main() {
 
                 switch (opcionMenuTemas) {
                   case 1:
+                    do {
+                      print("");
+                      print("🏁" * 30);
+                      print("MENÚ DE EDICIÓN (TEMAS DE EXPOSICÓN)");
+                      print("🏁" * 30);
+                      print("1. Añadir tema");
+                      print("2. Modificar tema");
+                      print("3. Eliminar tema");
+                      print("0. Salir");
+
+                      print("-" * 30);
+                      print("Digite la opción deseada");
+                      menuModificarTemasCaso1 =
+                          int.parse(stdin.readLineSync()!);
+
+                      switch (menuModificarTemasCaso1) {
+                        case 1:
+                          print("");
+                          print(
+                              "Escriba el nombre del tema que desea añadir a la lista");
+                          nuevoTema = stdin.readLineSync()!;
+                          listaTemasCaso1.add(nuevoTema);
+                          break;
+
+                        case 2:
+                          print("");
+                          print("Inserte la posición del tema a editar:");
+                          posicionABuscarTemas =
+                              int.parse(stdin.readLineSync()!);
+
+                          print("");
+                          print("Escriba la edición del tema:");
+                          edicionTema = stdin.readLineSync()!;
+
+                          listaTemasCaso1.insert(
+                              posicionABuscarTemas, edicionTema);
+
+                          print("-" * 30);
+                          print("¡Tema editado con éxito!");
+                          print("Nueva lista:");
+                          for (int i = 0; i < listaTemasCaso1.length; i++) {
+                            stdout.write("$i. ");
+                            print(listaTemasCaso1[i]);
+                          }
+                          break;
+
+                        case 3:
+                          print("");
+                          print("Inserte la posición del tema a eliminar:");
+                          posicionABuscarTemas =
+                              int.parse(stdin.readLineSync()!);
+                          listaTemasCaso1.removeAt(posicionABuscarTemas);
+
+                          print("-" * 30);
+                          print("Tema eliminado con éxito!");
+                          print("Nueva lista:");
+                          for (int i = 0; i < listaTemasCaso1.length; i++) {
+                            stdout.write("$i. ");
+                            print(listaTemasCaso1[i]);
+                          }
+                          break;
+
+                        default:
+                          print("");
+                          print("Volviendo al menú de edición");
+                          print("-" * 30);
+                          break;
+                      }
+                    } while (menuModificarTemasCaso1 != 0);
                     break;
 
                   case 2:
-                  print("");
-                    print("LISTA DE ESTUDIANTES");
+                    print("");
+                    print("LISTA DE TEMAS DE EXPOSICIÓN");
                     print("-" * 30);
-                    print(listaTemasCaso1);
+                    for (int i = 0; i < listaTemasCaso1.length; i++) {
+                      stdout.write("$i. ");
+                      print(listaTemasCaso1[i]);
+                    }
                     break;
 
                   default:
@@ -205,8 +362,18 @@ void main() {
       case 2: //CASO SIN PREDEFINIDOS
 
         List<String> listaEstudiantesCaso2 = [], listaTemasCaso2 = [];
-        String? nombreCaso2, temaCaso2;
-        int cantEstudiantes = 26, cantTemas = 7;
+        String? nombreCaso2,
+            temaCaso2,
+            nuevoNombre,
+            nuevoTema,
+            edicionTema,
+            edicionNombre;
+        int cantEstudiantes = 4,
+            cantTemas = 7,
+            menuModificarEstudiantesCaso2,
+            menuModificarTemasCaso2,
+            posicionABuscarEstudiantes,
+            posicionABuscarTemas;
 
         do {
           //EMPIEZA DO WHILE 2
@@ -230,14 +397,30 @@ void main() {
             //EMPIEZA SWITCH 2
 
             case 1:
+              if (listaEstudiantesCaso2.length == 0) {
+                print("");
+                print("Crear lista de estudiantes");
+                print("-" * 30);
+
+                for (int i = 0; i < cantEstudiantes; i++) {
+                  print("Digite el nombre del estudiante #${i + 1}");
+                  nombreCaso2 = stdin.readLineSync()!;
+                  listaEstudiantesCaso2.add(nombreCaso2);
+                }
+
+                print("");
+                for (int i = 0; i < listaEstudiantesCaso2.length; i++) {
+                  stdout.write("$i. ");
+                  print(listaEstudiantesCaso2[i]);
+                }
+              }
               do {
                 print("");
                 print("🏁" * 30);
                 print("MENÚ CRUD DE ESTUDIANTES");
                 print("🏁" * 30);
-                print("1. Crear lista de estudiantes");
-                print("2. Modificar lista de estudiantes");
-                print("3. Mostrar lista de estudiantes");
+                print("1. Modificar lista de estudiantes");
+                print("2. Mostrar lista de estudiantes");
                 print("0. Salir");
 
                 print("-" * 30);
@@ -246,21 +429,91 @@ void main() {
 
                 switch (opcionMenuEstudiantes) {
                   case 1:
-                    for (int i = 0; i < cantEstudiantes; i++) {
-                      print("Digite el nombre del estudiante #${i + 1}");
-                      nombreCaso2 = stdin.readLineSync()!;
-                      listaEstudiantesCaso2.add(nombreCaso2);
-                    }
+                    do {
+                      print("");
+                      print("🏁" * 30);
+                      print("MENÚ DE EDICIÓN (ESTUDIANTES)");
+                      print("🏁" * 30);
+                      print("1. Añadir estudiante");
+                      print("2. Modificar estudiante");
+                      print("3. Eliminar estudiante");
+                      print("0. Salir");
+
+                      print("-" * 30);
+                      print("Digite la opción deseada");
+                      menuModificarEstudiantesCaso2 =
+                          int.parse(stdin.readLineSync()!);
+
+                      switch (menuModificarEstudiantesCaso2) {
+                        case 1:
+                          print("");
+                          print(
+                              "Escriba el nombre del estudiante que desea añadir a la lista");
+                          nuevoNombre = stdin.readLineSync()!;
+                          listaEstudiantesCaso2.add(nuevoNombre);
+                          break;
+
+                        case 2:
+                          print("");
+                          print("Inserte la posición del estudiante a editar:");
+                          posicionABuscarEstudiantes =
+                              int.parse(stdin.readLineSync()!);
+
+                          print("");
+                          print("Escriba la edición del estudiante:");
+                          edicionNombre = stdin.readLineSync()!;
+
+                          listaEstudiantesCaso2.insert(
+                              posicionABuscarEstudiantes, edicionNombre);
+
+                          print("-" * 30);
+                          print("¡Estudiante editado con éxito!");
+                          print("Nueva lista:");
+                          for (int i = 0;
+                              i < listaEstudiantesCaso2.length;
+                              i++) {
+                            stdout.write("$i. ");
+                            print(listaEstudiantesCaso2[i]);
+                          }
+                          break;
+
+                        case 3:
+                          print("");
+                          print(
+                              "Inserte la posición del estudiante a eliminar:");
+                          posicionABuscarEstudiantes =
+                              int.parse(stdin.readLineSync()!);
+                          listaEstudiantesCaso2
+                              .removeAt(posicionABuscarEstudiantes);
+
+                          print("-" * 30);
+                          print("¡Estudiante eliminado con éxito!");
+                          print("Nueva lista:");
+                          for (int i = 0;
+                              i < listaEstudiantesCaso2.length;
+                              i++) {
+                            stdout.write("$i. ");
+                            print(listaEstudiantesCaso2[i]);
+                          }
+                          break;
+
+                        default:
+                          print("");
+                          print("Volviendo al menú de edición");
+                          print("-" * 30);
+                          break;
+                      }
+                    } while (menuModificarEstudiantesCaso2 != 0);
                     break;
 
                   case 2:
-                    break;
-
-                  case 3:
                     print("");
                     print("LISTA DE ESTUDIANTES");
                     print("-" * 30);
-                    print(listaEstudiantesCaso2);
+                    for (int i = 0; i < listaEstudiantesCaso2.length; i++) {
+                      stdout.write("$i. ");
+                      print(listaEstudiantesCaso2[i]);
+                    }
                     break;
 
                   default:
@@ -270,17 +523,34 @@ void main() {
                     break;
                 }
               } while (opcionMenuEstudiantes != 0);
+
               break;
 
             case 2:
+              if (listaTemasCaso2.length == 0) {
+                print("");
+                print("Crear lista de temas");
+                print("-" * 30);
+
+                for (int i = 0; i < cantTemas; i++) {
+                  print("Digite el tema de exposición #${i + 1}");
+                  temaCaso2 = stdin.readLineSync()!;
+                  listaTemasCaso2.add(temaCaso2);
+                }
+
+                print("");
+                for (int i = 0; i < listaTemasCaso2.length; i++) {
+                  stdout.write("$i. ");
+                  print(listaTemasCaso2[i]);
+                }
+              }
               do {
                 print("");
                 print("🏁" * 30);
                 print("MENU CRUD PARA TEMAS DE EXPOSICIÓN");
                 print("🏁" * 30);
-                print("1. Crear lista de temas de exposición");
-                print("2. Modificar lista de temas de exposición");
-                print("3. Mostrar lista de temas de exposición");
+                print("1. Modificar lista de temas de exposición");
+                print("2. Mostrar lista de temas de exposición");
                 print("0. Salir");
 
                 print("-" * 30);
@@ -289,21 +559,85 @@ void main() {
 
                 switch (opcionMenuTemas) {
                   case 1:
-                    for (int i = 0; i < cantTemas; i++) {
-                      print("Digite el tema de exposición #${i + 1}");
-                      temaCaso2 = stdin.readLineSync()!;
-                      listaTemasCaso2.add(temaCaso2);
-                    }
+                    do {
+                      print("");
+                      print("🏁" * 30);
+                      print("MENÚ DE EDICIÓN (TEMAS DE EXPOSICIÓN)");
+                      print("🏁" * 30);
+                      print("1. Añadir tema");
+                      print("2. Modificar tema");
+                      print("3. Eliminar tema");
+                      print("0. Salir");
+
+                      print("-" * 30);
+                      print("Digite la opción deseada");
+                      menuModificarTemasCaso2 =
+                          int.parse(stdin.readLineSync()!);
+
+                      switch (menuModificarTemasCaso2) {
+                        case 1:
+                          print("");
+                          print(
+                              "Escriba el nombre del tema que desea añadir a la lista");
+                          nuevoTema = stdin.readLineSync()!;
+                          listaTemasCaso2.add(nuevoTema);
+                          break;
+
+                        case 2:
+                          print("");
+                          print("Inserte la posición del tema a editar:");
+                          posicionABuscarTemas =
+                              int.parse(stdin.readLineSync()!);
+
+                          print("");
+                          print("Escriba la edición del tema:");
+                          edicionTema = stdin.readLineSync()!;
+
+                          listaTemasCaso2.insert(
+                              posicionABuscarTemas, edicionTema);
+
+                          print("-" * 30);
+                          print("¡Tema editado con éxito!");
+                          print("Nueva lista:");
+                          for (int i = 0; i < listaTemasCaso2.length; i++) {
+                            stdout.write("$i. ");
+                            print(listaTemasCaso2[i]);
+                          }
+                          break;
+
+                        case 3:
+                          print("");
+                          print("Inserte la posición del tema a eliminar:");
+                          posicionABuscarTemas =
+                              int.parse(stdin.readLineSync()!);
+                          listaTemasCaso2.removeAt(posicionABuscarTemas);
+
+                          print("-" * 30);
+                          print("Tema eliminado con éxito!");
+                          print("Nueva lista:");
+                          for (int i = 0; i < listaTemasCaso2.length; i++) {
+                            stdout.write("$i. ");
+                            print(listaTemasCaso2[i]);
+                          }
+                          break;
+
+                        default:
+                          print("");
+                          print("Volviendo al menú de edición");
+                          print("-" * 30);
+                          break;
+                      }
+                    } while (menuModificarTemasCaso2 != 0);
                     break;
 
                   case 2:
-                    break;
-
-                  case 3:
                     print("");
                     print("LISTA DE TEMAS DE EXPOSICIÓN");
                     print("-" * 30);
-                    print(listaTemasCaso2);
+                    for (int i = 0; i < listaTemasCaso2.length; i++) {
+                      stdout.write("$i. ");
+                      print(listaTemasCaso2[i]);
+                    }
                     break;
 
                   default:
