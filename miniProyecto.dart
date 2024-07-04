@@ -75,11 +75,18 @@ void main() {
               "Diagramas de UML"
             ];
 
+        List<List<String>> grupos3 = [];
+
         int menuModificarEstudiantesCaso1,
             menuModificarTemasCaso1,
             posicionABuscarEstudiantes,
             posicionABuscarTemas,
-            cantParticipantesTema;
+            cantParticipantesTema,
+            cantidadGrupos3 = 5,
+            cantidadGrupos4 = 3,
+            cantParticipantes3 = 3,
+            cantParticipantes4 = 4,
+            contadorEstudiantes = 0;
         String? nuevoNombre, nuevoTema, edicionNombre, edicionTema;
 
         do {
@@ -189,7 +196,7 @@ void main() {
 
                         default:
                           print("");
-                          print("Volviendo al menú de edición");
+                          print("Volviendo al menú de edición ↩");
                           print("-" * 30);
                           break;
                       }
@@ -208,7 +215,7 @@ void main() {
 
                   default:
                     print("");
-                    print("De vuelta al menú principal");
+                    print("De vuelta al menú principal ↩");
                     print("-" * 30);
                     break;
                 }
@@ -381,7 +388,7 @@ void main() {
 
                         default:
                           print("");
-                          print("Volviendo al menú de edición");
+                          print("Volviendo al menú de edición ↩");
                           print("-" * 30);
                           break;
                       }
@@ -423,7 +430,7 @@ void main() {
 
                   default:
                     print("");
-                    print("De vuelta al menú principal");
+                    print("De vuelta al menú principal ↩");
                     print("-" * 30);
                     break;
                 }
@@ -445,14 +452,60 @@ void main() {
 
                 switch (opcionMezcla) {
                   case 1:
+                    listaEstudiantesCaso1.shuffle();
+                    listaTemasCaso1Complejidad3.shuffle();
+                    listaTemasCaso1Complejidad4.shuffle();
+
+                    for (int i = 0; i < cantidadGrupos3; i++) {
+                      List<String> grupo1 = [];
+                      grupo1.add(listaTemasCaso1Complejidad3[i]);
+                      for (int j = 0; j < cantParticipantes3; j++) {
+                        contadorEstudiantes++;
+                        if (contadorEstudiantes <
+                            listaEstudiantesCaso1.length) {
+                          grupo1
+                              .add(listaEstudiantesCaso1[contadorEstudiantes]);
+                        }
+                      }
+                      grupos3.add(grupo1);
+                    }
+
+                    for (int i = 0; i < cantidadGrupos4; i++) {
+                      List<String> grupo2 = [];
+                      grupo2.add(listaTemasCaso1Complejidad4[i]);
+                      for (int j = 0; j < cantParticipantes4; j++) {
+                        contadorEstudiantes++;
+                        if (contadorEstudiantes <
+                            listaEstudiantesCaso1.length) {
+                          grupo2
+                              .add(listaEstudiantesCaso1[contadorEstudiantes]);
+                        }
+                      }
+                      grupos3.add(grupo2);
+                    }
+
+                    for (int i = 0; i < grupos3.length; i++) {
+                      print("----" * 30);
+                      for (int j = 0; j < grupos3[0].length; j++) {
+                        stdout.write("${grupos3[i][j]}||");
+                      }
+                      print("");
+                    }
                     break;
 
                   case 2:
+                    for (int i = 0; i < grupos3.length; i++) {
+                      print("----" * 30);
+                      for (int j = 0; j < grupos3[0].length; j++) {
+                        stdout.write("${grupos3[i][j]}||");
+                      }
+                      print("");
+                    }
                     break;
 
                   default:
                     print("");
-                    print("De vuelta al menú principal");
+                    print("De vuelta al menú principal ↩");
                     print("-" * 30);
                     break;
                 }
@@ -468,6 +521,7 @@ void main() {
         break;
 
       case 2: //CASO SIN PREDEFINIDOS
+        List<List<String>> grupos3 = [];
 
         List<String> listaEstudiantesCaso2 = [],
             listaTemasCaso2Complejidad3 = [],
@@ -478,14 +532,19 @@ void main() {
             nuevoTema,
             edicionTema,
             edicionNombre;
-        int cantEstudiantes = 5,
-            cantTemasComplejidad3 = 4,
+        int cantEstudiantes = 27,
+            cantTemasComplejidad3 = 5,
             cantTemasComplejidad4 = 3,
             menuModificarEstudiantesCaso2,
             menuModificarTemasCaso2,
             posicionABuscarEstudiantes,
             posicionABuscarTemas,
-            cantParticipantesTema;
+            cantParticipantesTema,
+            contadorEstudiantes = 0,
+            cantParticipantes3 = 3,
+            cantParticipantes4 = 4,
+            cantidadGrupos3 = listaTemasCaso2Complejidad3.length,
+            cantidadGrupos4 = listaTemasCaso2Complejidad4.length;
 
         do {
           //EMPIEZA DO WHILE 2
@@ -610,7 +669,7 @@ void main() {
 
                         default:
                           print("");
-                          print("Volviendo al menú de edición");
+                          print("Volviendo al menú de edición ↩");
                           print("-" * 30);
                           break;
                       }
@@ -862,7 +921,7 @@ void main() {
 
                         default:
                           print("");
-                          print("Volviendo al menú de edición");
+                          print("Volviendo al menú de edición ↩");
                           print("-" * 30);
                           break;
                       }
@@ -904,7 +963,7 @@ void main() {
 
                   default:
                     print("");
-                    print("De vuelta al menú principal");
+                    print("De vuelta al menú principal ↩");
                     print("-" * 30);
                     break;
                 }
@@ -927,14 +986,60 @@ void main() {
 
                 switch (opcionMezcla) {
                   case 1:
+                    listaEstudiantesCaso2.shuffle();
+                    listaTemasCaso2Complejidad3.shuffle();
+                    listaTemasCaso2Complejidad4.shuffle();
+
+                    for (int i = 0; i < cantidadGrupos3; i++) {
+                      List<String> grupo1 = [];
+                      grupo1.add(listaTemasCaso2Complejidad3[i]);
+                      for (int j = 0; j < cantParticipantes3; j++) {
+                        contadorEstudiantes++;
+                        if (contadorEstudiantes <
+                            listaEstudiantesCaso2.length) {
+                          grupo1
+                              .add(listaEstudiantesCaso2[contadorEstudiantes]);
+                        }
+                      }
+                      grupos3.add(grupo1);
+                    }
+
+                    for (int i = 0; i < cantidadGrupos4; i++) {
+                      List<String> grupo2 = [];
+                      grupo2.add(listaTemasCaso2Complejidad4[i]);
+                      for (int j = 0; j < cantParticipantes4; j++) {
+                        contadorEstudiantes++;
+                        if (contadorEstudiantes <
+                            listaEstudiantesCaso2.length) {
+                          grupo2
+                              .add(listaEstudiantesCaso2[contadorEstudiantes]);
+                        }
+                      }
+                      grupos3.add(grupo2);
+                    }
+
+                    for (int i = 0; i < grupos3.length; i++) {
+                      print("----" * 30);
+                      for (int j = 0; j < grupos3[0].length; j++) {
+                        stdout.write("${grupos3[i][j]}||");
+                      }
+                      print("");
+                    }
                     break;
 
                   case 2:
+                    for (int i = 0; i < grupos3.length; i++) {
+                      print("----" * 30);
+                      for (int j = 0; j < grupos3[0].length; j++) {
+                        stdout.write("${grupos3[i][j]}||");
+                      }
+                      print("");
+                    }
                     break;
 
                   default:
                     print("");
-                    print("De vuelta al menú principal");
+                    print("De vuelta al menú principal ↩");
                     print("-" * 30);
                     break;
                 }
@@ -951,7 +1056,7 @@ void main() {
 
       default: //SALIR DE APP
         print("");
-        print("SALIENDO DE LA APP, ¡Vuelve pronto!");
+        print("SALIENDO DE LA APP, ¡Vuelva pronto!👍");
         break; //CIERRA SWITCH 1
     }
   } while (opcionTipoApp != 0); //CIERRA DO WHILE 1
